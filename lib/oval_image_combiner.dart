@@ -69,6 +69,7 @@ class OvalImageCombiner extends StatelessWidget {
                   imageUrl: imageUrl1,
                   width: _imageHalfSize,
                   height: imageSize,
+                  scale: 1.2,
                 ),
               ),
             ),
@@ -81,6 +82,7 @@ class OvalImageCombiner extends StatelessWidget {
                   imageUrl: imageUrl2,
                   width: _imageHalfSize,
                   height: imageSize,
+                  scale: 1.2,
                 ),
               ),
             ),
@@ -110,6 +112,7 @@ class OvalImageCombiner extends StatelessWidget {
                   imageUrl: imageUrl1,
                   width: imageSize,
                   height: imageSize,
+                  scale: 1.2,
                 ),
               ),
             ),
@@ -123,6 +126,7 @@ class OvalImageCombiner extends StatelessWidget {
                   imageUrl: imageUrl2,
                   width: _imageHalfSize,
                   height: _imageHalfSize,
+                  scale: 1.5,
                 ),
               ),
             ),
@@ -136,6 +140,7 @@ class OvalImageCombiner extends StatelessWidget {
                   imageUrl: imageUrl3,
                   width: _imageHalfSize,
                   height: _imageHalfSize,
+                  scale: 1.5,
                 ),
               ),
             ),
@@ -165,6 +170,7 @@ class OvalImageCombiner extends StatelessWidget {
                   imageUrl: imageUrl1,
                   width: _imageHalfSize,
                   height: _imageHalfSize,
+                  scale: 1.5,
                 ),
               ),
             ),
@@ -176,6 +182,7 @@ class OvalImageCombiner extends StatelessWidget {
                   imageUrl: imageUrl2,
                   width: _imageHalfSize,
                   height: _imageHalfSize,
+                  scale: 1.5,
                 ),
               ),
             ),
@@ -187,6 +194,7 @@ class OvalImageCombiner extends StatelessWidget {
                   imageUrl: imageUrl3,
                   width: _imageHalfSize,
                   height: _imageHalfSize,
+                  scale: 1.5,
                 ),
               ),
             ),
@@ -198,6 +206,7 @@ class OvalImageCombiner extends StatelessWidget {
                   imageUrl: imageUrl4,
                   width: _imageHalfSize,
                   height: _imageHalfSize,
+                  scale: 1.5,
                 ),
               ),
             ),
@@ -211,23 +220,25 @@ class OvalImageCombiner extends StatelessWidget {
     required String imageUrl,
     required double width,
     required double height,
+    double? scale = 1.0,
   }) {
     final isSvg = imageUrl.endsWith('.svg');
 
-    if (isSvg) {
-      return SvgPicture.network(
-        imageUrl,
-        width: width,
-        height: height,
-        fit: BoxFit.cover,
-      );
-    }
-
-    return Image.network(
-      imageUrl,
-      width: width,
-      height: height,
-      fit: BoxFit.cover,
+    return Transform.scale(
+      scale: scale,
+      child: (isSvg)
+          ? SvgPicture.network(
+              imageUrl,
+              width: width,
+              height: height,
+              fit: BoxFit.cover,
+            )
+          : Image.network(
+              imageUrl,
+              width: width,
+              height: height,
+              fit: BoxFit.cover,
+            ),
     );
   }
 }
