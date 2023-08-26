@@ -14,6 +14,8 @@ class OvalImageCombiner extends StatelessWidget {
   }) : super(key: key);
 
   double get _imageHalfSize => imageSize / 2;
+  Color get _dividerColor => Colors.white;
+  double get _dividerThickness => 2;
 
   @override
   Widget build(BuildContext context) {
@@ -86,6 +88,7 @@ class OvalImageCombiner extends StatelessWidget {
                 ),
               ),
             ),
+            _buildVerticalDivider(),
           ],
         ),
       ),
@@ -144,6 +147,8 @@ class OvalImageCombiner extends StatelessWidget {
                 ),
               ),
             ),
+            _buildVerticalDivider(),
+            _buildHorizontalRightDivider(),
           ],
         ),
       ),
@@ -210,6 +215,8 @@ class OvalImageCombiner extends StatelessWidget {
                 ),
               ),
             ),
+            _buildVerticalDivider(),
+            _buildHorizontalDivider(),
           ],
         ),
       ),
@@ -239,6 +246,32 @@ class OvalImageCombiner extends StatelessWidget {
               height: height,
               fit: BoxFit.cover,
             ),
+    );
+  }
+
+  Widget _buildVerticalDivider() {
+    return VerticalDivider(
+      color: _dividerColor,
+      thickness: _dividerThickness,
+      width: imageSize,
+    );
+  }
+
+  Widget _buildHorizontalDivider() {
+    return Divider(
+      color: _dividerColor,
+      thickness: _dividerThickness,
+      height: imageSize,
+    );
+  }
+
+  Widget _buildHorizontalRightDivider() {
+    return Positioned(
+      top: _imageHalfSize,
+      bottom: _imageHalfSize,
+      right: 0,
+      left: _imageHalfSize,
+      child: Divider(color: _dividerColor, thickness: _dividerThickness),
     );
   }
 }
