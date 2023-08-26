@@ -12,7 +12,7 @@ A Flutter widget that allows you to combine up to four images into an oval shape
 
 ### Installation
 
-Add the following to your 'pubspec.yaml' file:
+Add the following to your `pubspec.yaml` file:
 
 ```dart
 dependencies:
@@ -41,10 +41,10 @@ OvalImageCombiner(
 ```
 
 ## Example 
-Here you can find an example probject showcasing how to use the 'OvalImageCombiner' widget.
+[Here](https://github.com/tommykw/oval_image_combiner/tree/main/example) you can find an example probject showcasing how to use the `OvalImageCombiner` widget.
 
 ## License
-This probject is licensed under the MIT License. See the LICENSE file for details.
+This probject is licensed under the MIT License. See the [LICENSE](https://github.com/tommykw/oval_image_combiner/blob/main/LICENSE) file for details.
 
 
 
