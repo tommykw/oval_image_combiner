@@ -27,7 +27,7 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Combinded Images:'),
+            const Text('Combined Images:'),
             const SizedBox(height: 20),
             OvalImageCombiner(
               imageUrls: [
