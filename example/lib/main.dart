@@ -31,34 +31,34 @@ class MyHomePage extends StatelessWidget {
             const SizedBox(height: 20),
             OvalImageCombiner(
               imageUrls: [
-                'https://picsum.photos/200/300',
+                'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
               ],
               imageSize: 100,
             ),
             const SizedBox(height: 20),
             OvalImageCombiner(
               imageUrls: [
-                'https://picsum.photos/200/300',
-                'https://picsum.photos/200/300',
+                'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
+                'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
               ],
               imageSize: 100,
             ),
             const SizedBox(height: 20),
             OvalImageCombiner(
               imageUrls: [
-                'https://picsum.photos/200/300',
-                'https://picsum.photos/200/300',
-                'https://picsum.photos/200/300',
+                'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
+                'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
+                'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
               ],
               imageSize: 100,
             ),
             const SizedBox(height: 20),
             OvalImageCombiner(
               imageUrls: [
-                'https://picsum.photos/200/300',
-                'https://picsum.photos/200/300',
-                'https://picsum.photos/200/300',
-                'https://picsum.photos/200/300',
+                'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
+                'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
+                'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
+                'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
               ],
               imageSize: 100,
             ),
