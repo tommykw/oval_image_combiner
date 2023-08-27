@@ -1,5 +1,6 @@
 part of oval_image_combiner;
 
+/// Fetches and displays an image from the specified URL with the appropriate size and scale.
 Widget buildImage({
   required String imageUrl,
   required double width,

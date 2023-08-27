@@ -9,6 +9,7 @@ part 'src/image_helpers.dart';
 const Color _dividerColor = Colors.white;
 const double _dividerThickness = 2;
 
+/// This class provides a widget that displays images in different combinations using a list of specified image URLs.
 class OvalImageCombiner extends StatelessWidget {
   final List<String> imageUrls;
   final double imageSize;

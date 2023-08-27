@@ -1,5 +1,6 @@
 part of oval_image_combiner;
 
+/// Creates a vertical divider.
 Widget buildVerticalDivider({
   required double width,
   required Color color,
@@ -12,6 +13,7 @@ Widget buildVerticalDivider({
   );
 }
 
+/// Creates a horizontal divider.
 Widget buildHorizontalDivider({
   required double height,
   required Color color,
@@ -24,6 +26,7 @@ Widget buildHorizontalDivider({
   );
 }
 
+/// Creates a horizontal divider on the right size.
 Widget buildHorizontalRightDivider({
   required double imageHalfSize,
   required Color color,
