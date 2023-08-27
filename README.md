@@ -2,7 +2,7 @@
 
 A Flutter widget that allows you to combine up to four images into an oval shape.
 
-<img src="https://github.com/tommykw/oval_image_combiner/blob/main/asset/sample_capture.png" width="320" />
+<img src="https://github.com/tommykw/oval_image_combiner/blob/main/asset/sample_capture.png?raw=true" width="320" />
 
 ## Features
 
