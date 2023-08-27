@@ -3,6 +3,12 @@ library oval_image_combiner;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+part 'src/divider_helpers.dart';
+part 'src/image_helpers.dart';
+
+const Color _dividerColor = Colors.white;
+const double _dividerThickness = 2;
+
 class OvalImageCombiner extends StatelessWidget {
   final List<String> imageUrls;
   final double imageSize;
@@ -14,8 +20,6 @@ class OvalImageCombiner extends StatelessWidget {
   }) : super(key: key);
 
   double get _imageHalfSize => imageSize / 2;
-  Color get _dividerColor => Colors.white;
-  double get _dividerThickness => 2;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +51,7 @@ class OvalImageCombiner extends StatelessWidget {
 
   Widget _buildOneImage(String imageUrl) {
     return ClipOval(
-      child: _buildImage(
+      child: buildImage(
         imageUrl: imageUrl,
         width: imageSize,
         height: imageSize,
@@ -67,7 +71,7 @@ class OvalImageCombiner extends StatelessWidget {
               width: _imageHalfSize,
               height: imageSize,
               child: ClipRect(
-                child: _buildImage(
+                child: buildImage(
                   imageUrl: imageUrl1,
                   width: _imageHalfSize,
                   height: imageSize,
@@ -80,7 +84,7 @@ class OvalImageCombiner extends StatelessWidget {
               width: _imageHalfSize,
               height: imageSize,
               child: ClipRect(
-                child: _buildImage(
+                child: buildImage(
                   imageUrl: imageUrl2,
                   width: _imageHalfSize,
                   height: imageSize,
@@ -88,7 +92,11 @@ class OvalImageCombiner extends StatelessWidget {
                 ),
               ),
             ),
-            _buildVerticalDivider(),
+            buildVerticalDivider(
+              width: imageSize,
+              color: _dividerColor,
+              thickness: _dividerThickness,
+            ),
           ],
         ),
       ),
@@ -111,7 +119,7 @@ class OvalImageCombiner extends StatelessWidget {
               width: _imageHalfSize,
               height: imageSize,
               child: ClipRect(
-                child: _buildImage(
+                child: buildImage(
                   imageUrl: imageUrl1,
                   width: imageSize,
                   height: imageSize,
@@ -125,7 +133,7 @@ class OvalImageCombiner extends StatelessWidget {
               width: _imageHalfSize,
               height: _imageHalfSize,
               child: ClipRect(
-                child: _buildImage(
+                child: buildImage(
                   imageUrl: imageUrl2,
                   width: _imageHalfSize,
                   height: _imageHalfSize,
@@ -139,7 +147,7 @@ class OvalImageCombiner extends StatelessWidget {
               width: _imageHalfSize,
               height: _imageHalfSize,
               child: ClipRect(
-                child: _buildImage(
+                child: buildImage(
                   imageUrl: imageUrl3,
                   width: _imageHalfSize,
                   height: _imageHalfSize,
@@ -147,8 +155,16 @@ class OvalImageCombiner extends StatelessWidget {
                 ),
               ),
             ),
-            _buildVerticalDivider(),
-            _buildHorizontalRightDivider(),
+            buildVerticalDivider(
+              width: imageSize,
+              color: _dividerColor,
+              thickness: _dividerThickness,
+            ),
+            buildHorizontalRightDivider(
+              imageHalfSize: _imageHalfSize,
+              color: _dividerColor,
+              thickness: _dividerThickness,
+            ),
           ],
         ),
       ),
@@ -171,7 +187,7 @@ class OvalImageCombiner extends StatelessWidget {
               top: 0,
               left: 0,
               child: ClipRect(
-                child: _buildImage(
+                child: buildImage(
                   imageUrl: imageUrl1,
                   width: _imageHalfSize,
                   height: _imageHalfSize,
@@ -183,7 +199,7 @@ class OvalImageCombiner extends StatelessWidget {
               left: 0,
               bottom: 0,
               child: ClipRect(
-                child: _buildImage(
+                child: buildImage(
                   imageUrl: imageUrl2,
                   width: _imageHalfSize,
                   height: _imageHalfSize,
@@ -195,7 +211,7 @@ class OvalImageCombiner extends StatelessWidget {
               top: 0,
               right: 0,
               child: ClipRect(
-                child: _buildImage(
+                child: buildImage(
                   imageUrl: imageUrl3,
                   width: _imageHalfSize,
                   height: _imageHalfSize,
@@ -207,7 +223,7 @@ class OvalImageCombiner extends StatelessWidget {
               right: 0,
               bottom: 0,
               child: ClipRect(
-                child: _buildImage(
+                child: buildImage(
                   imageUrl: imageUrl4,
                   width: _imageHalfSize,
                   height: _imageHalfSize,
@@ -215,63 +231,19 @@ class OvalImageCombiner extends StatelessWidget {
                 ),
               ),
             ),
-            _buildVerticalDivider(),
-            _buildHorizontalDivider(),
+            buildVerticalDivider(
+              width: imageSize,
+              color: _dividerColor,
+              thickness: _dividerThickness,
+            ),
+            buildHorizontalDivider(
+              height: imageSize,
+              color: _dividerColor,
+              thickness: _dividerThickness,
+            ),
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildImage({
-    required String imageUrl,
-    required double width,
-    required double height,
-    double? scale = 1.0,
-  }) {
-    final isSvg = imageUrl.endsWith('.svg');
-
-    return Transform.scale(
-      scale: scale,
-      child: (isSvg)
-          ? SvgPicture.network(
-              imageUrl,
-              width: width,
-              height: height,
-              fit: BoxFit.cover,
-            )
-          : Image.network(
-              imageUrl,
-              width: width,
-              height: height,
-              fit: BoxFit.cover,
-            ),
-    );
-  }
-
-  Widget _buildVerticalDivider() {
-    return VerticalDivider(
-      color: _dividerColor,
-      thickness: _dividerThickness,
-      width: imageSize,
-    );
-  }
-
-  Widget _buildHorizontalDivider() {
-    return Divider(
-      color: _dividerColor,
-      thickness: _dividerThickness,
-      height: imageSize,
-    );
-  }
-
-  Widget _buildHorizontalRightDivider() {
-    return Positioned(
-      top: _imageHalfSize,
-      bottom: _imageHalfSize,
-      right: 0,
-      left: _imageHalfSize,
-      child: Divider(color: _dividerColor, thickness: _dividerThickness),
     );
   }
 }
