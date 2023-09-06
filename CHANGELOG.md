@@ -1,5 +1,8 @@
 # CHANGELOG.md
 
+## 0.0.5 - 2023-09-06
+- Refactor modules
+
 ## 0.0.4 - 2023-08-27
 - Refactor: Split helper functions into separate files
 

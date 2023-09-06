@@ -3,10 +3,20 @@ library oval_image_combiner;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+part 'divider_helpers.dart';
+part 'image_helpers.dart';
+
+/// 'OvalImageCombiner' is a widget that desgined to combine multiple images and 
+/// display them as a single oval widget.
 class OvalImageCombiner extends StatelessWidget {
+  /// A list of image URLs.
+  /// The list can contain up to four URLs.
   final List<String> imageUrls;
+
+  /// The overall size of the widget.
   final double imageSize;
 
+  /// Constructs a new 'OvalImageCombiner' instance.
   const OvalImageCombiner({
     Key? key,
     required this.imageUrls,
@@ -88,7 +98,11 @@ class OvalImageCombiner extends StatelessWidget {
                 ),
               ),
             ),
-            _buildVerticalDivider(),
+            _buildVerticalDivider(
+              width: imageSize,
+              color: _dividerColor,
+              thickness: _dividerThickness,
+            ),
           ],
         ),
       ),
@@ -147,8 +161,16 @@ class OvalImageCombiner extends StatelessWidget {
                 ),
               ),
             ),
-            _buildVerticalDivider(),
-            _buildHorizontalRightDivider(),
+            _buildVerticalDivider(
+              width: imageSize,
+              color: _dividerColor,
+              thickness: _dividerThickness,
+            ),
+            _buildHorizontalRightDivider(
+              imageHalfSize: _imageHalfSize,
+              color: _dividerColor,
+              thickness: _dividerThickness,
+            ),
           ],
         ),
       ),
@@ -215,63 +237,19 @@ class OvalImageCombiner extends StatelessWidget {
                 ),
               ),
             ),
-            _buildVerticalDivider(),
-            _buildHorizontalDivider(),
+            _buildVerticalDivider(
+              width: imageSize,
+              color: _dividerColor,
+              thickness: _dividerThickness,
+            ),
+            _buildHorizontalDivider(
+              height: imageSize,
+              color: _dividerColor,
+              thickness: _dividerThickness,
+            ),
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildImage({
-    required String imageUrl,
-    required double width,
-    required double height,
-    double? scale = 1.0,
-  }) {
-    final isSvg = imageUrl.endsWith('.svg');
-
-    return Transform.scale(
-      scale: scale,
-      child: (isSvg)
-          ? SvgPicture.network(
-              imageUrl,
-              width: width,
-              height: height,
-              fit: BoxFit.cover,
-            )
-          : Image.network(
-              imageUrl,
-              width: width,
-              height: height,
-              fit: BoxFit.cover,
-            ),
-    );
-  }
-
-  Widget _buildVerticalDivider() {
-    return VerticalDivider(
-      color: _dividerColor,
-      thickness: _dividerThickness,
-      width: imageSize,
-    );
-  }
-
-  Widget _buildHorizontalDivider() {
-    return Divider(
-      color: _dividerColor,
-      thickness: _dividerThickness,
-      height: imageSize,
-    );
-  }
-
-  Widget _buildHorizontalRightDivider() {
-    return Positioned(
-      top: _imageHalfSize,
-      bottom: _imageHalfSize,
-      right: 0,
-      left: _imageHalfSize,
-      child: Divider(color: _dividerColor, thickness: _dividerThickness),
     );
   }
 }

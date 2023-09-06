@@ -1,6 +1,6 @@
 name: oval_image_combiner
 description: A Flutter widget to combine up to four images into an oval shape. 
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/tommykw/oval_image_combiner
 
 environment:
