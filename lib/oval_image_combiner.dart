@@ -6,7 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 part 'divider_helpers.dart';
 part 'image_helpers.dart';
 
-/// 'OvalImageCombiner' is a widget that desgined to combine multiple images and 
+/// 'OvalImageCombiner' is a widget that desgined to combine multiple images and
 /// display them as a single oval widget.
 class OvalImageCombiner extends StatelessWidget {
   /// A list of image URLs.
