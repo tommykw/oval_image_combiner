@@ -38,16 +38,7 @@ class MyHomePage extends StatelessWidget {
             const SizedBox(height: 20),
             OvalImageCombiner(
               imageUrls: [
-                'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
-                'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
-              ],
-              imageSize: 100,
-            ),
-            const SizedBox(height: 20),
-            OvalImageCombiner(
-              imageUrls: [
-                'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
-                'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
+                'https://raw.githubusercontent.com/tommykw/oval_image_combiner/0545c8914db2f2d596b71491ea5d66c2c1217c4b/asset/search_black.svg',
                 'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
               ],
               imageSize: 100,
@@ -56,9 +47,18 @@ class MyHomePage extends StatelessWidget {
             OvalImageCombiner(
               imageUrls: [
                 'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
+                'https://raw.githubusercontent.com/tommykw/oval_image_combiner/0545c8914db2f2d596b71491ea5d66c2c1217c4b/asset/search_black.svg',
                 'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
+              ],
+              imageSize: 100,
+            ),
+            const SizedBox(height: 20),
+            OvalImageCombiner(
+              imageUrls: [
                 'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
+                'https://raw.githubusercontent.com/tommykw/oval_image_combiner/0545c8914db2f2d596b71491ea5d66c2c1217c4b/asset/search_black.svg',
                 'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
+                'https://raw.githubusercontent.com/tommykw/oval_image_combiner/0545c8914db2f2d596b71491ea5d66c2c1217c4b/asset/search_black.svg',
               ],
               imageSize: 100,
             ),
