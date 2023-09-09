@@ -17,24 +17,32 @@ class OvalImageCombiner extends StatelessWidget {
   /// The overall size of the widget.
   final double imageSize;
 
-  /// The color ot the outer border.
-  final Color? outerBorderColor;
+  /// The color of the border.
+  final Color? borderColor;
 
-  /// The width of the outer border.
-  final double? outerBorderWidth;
+  /// The width of the border.
+  final double? borderWidth;
+
+  /// The color of the divider.
+  final Color? dividerColor;
+
+  /// The thickness of the divider.
+  final double? dividerThickness;
 
   /// Constructs a new 'OvalImageCombiner' instance.
   const OvalImageCombiner({
     Key? key,
     required this.imageUrls,
     required this.imageSize,
-    this.outerBorderColor,
-    this.outerBorderWidth,
+    this.borderColor,
+    this.borderWidth,
+    this.dividerColor,
+    this.dividerThickness,
   }) : super(key: key);
 
   double get _imageHalfSize => imageSize / 2;
-  Color get _dividerColor => Colors.white;
-  double get _dividerThickness => 2;
+  Color get _dividerColor => dividerColor ?? Colors.white;
+  double get _dividerThickness => dividerThickness ?? 2;
 
   @override
   Widget build(BuildContext context) {
@@ -66,8 +74,8 @@ class OvalImageCombiner extends StatelessWidget {
 
   Widget _buildOneImage(String imageUrl) {
     return _BorderedClipOval(
-      borderColor: outerBorderColor,
-      borderWidth: outerBorderWidth,
+      borderColor: borderColor,
+      borderWidth: borderWidth,
       child: _buildImage(
         imageUrl: imageUrl,
         width: imageSize,
@@ -78,8 +86,8 @@ class OvalImageCombiner extends StatelessWidget {
 
   Widget _buildTwoImages(String imageUrl1, String imageUrl2) {
     return _BorderedClipOval(
-      borderColor: outerBorderColor,
-      borderWidth: outerBorderWidth,
+      borderColor: borderColor,
+      borderWidth: borderWidth,
       child: SizedBox(
         width: imageSize,
         height: imageSize,
@@ -128,8 +136,8 @@ class OvalImageCombiner extends StatelessWidget {
     String imageUrl3,
   ) {
     return _BorderedClipOval(
-      borderColor: outerBorderColor,
-      borderWidth: outerBorderWidth,
+      borderColor: borderColor,
+      borderWidth: borderWidth,
       child: SizedBox(
         width: imageSize,
         height: imageSize,
@@ -199,8 +207,8 @@ class OvalImageCombiner extends StatelessWidget {
     String imageUrl4,
   ) {
     return _BorderedClipOval(
-      borderColor: outerBorderColor,
-      borderWidth: outerBorderWidth,
+      borderColor: borderColor,
+      borderWidth: borderWidth,
       child: SizedBox(
         width: imageSize,
         height: imageSize,
