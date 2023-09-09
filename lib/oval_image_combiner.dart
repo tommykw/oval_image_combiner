@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 part 'divider_helpers.dart';
 part 'image_helpers.dart';
+part 'bordered_clip_oval.dart';
 
 /// 'OvalImageCombiner' is a widget that desgined to combine multiple images and
 /// display them as a single oval widget.
@@ -16,11 +17,19 @@ class OvalImageCombiner extends StatelessWidget {
   /// The overall size of the widget.
   final double imageSize;
 
+  /// The color ot the outer border.
+  final Color? outerBorderColor;
+
+  /// The width of the outer border.
+  final double? outerBorderWidth;
+
   /// Constructs a new 'OvalImageCombiner' instance.
   const OvalImageCombiner({
     Key? key,
     required this.imageUrls,
     required this.imageSize,
+    this.outerBorderColor,
+    this.outerBorderWidth,
   }) : super(key: key);
 
   double get _imageHalfSize => imageSize / 2;
@@ -56,7 +65,9 @@ class OvalImageCombiner extends StatelessWidget {
   }
 
   Widget _buildOneImage(String imageUrl) {
-    return ClipOval(
+    return _BorderedClipOval(
+      borderColor: outerBorderColor,
+      borderWidth: outerBorderWidth,
       child: _buildImage(
         imageUrl: imageUrl,
         width: imageSize,
@@ -66,7 +77,9 @@ class OvalImageCombiner extends StatelessWidget {
   }
 
   Widget _buildTwoImages(String imageUrl1, String imageUrl2) {
-    return ClipOval(
+    return _BorderedClipOval(
+      borderColor: outerBorderColor,
+      borderWidth: outerBorderWidth,
       child: SizedBox(
         width: imageSize,
         height: imageSize,
@@ -114,7 +127,9 @@ class OvalImageCombiner extends StatelessWidget {
     String imageUrl2,
     String imageUrl3,
   ) {
-    return ClipOval(
+    return _BorderedClipOval(
+      borderColor: outerBorderColor,
+      borderWidth: outerBorderWidth,
       child: SizedBox(
         width: imageSize,
         height: imageSize,
@@ -183,7 +198,9 @@ class OvalImageCombiner extends StatelessWidget {
     String imageUrl3,
     String imageUrl4,
   ) {
-    return ClipOval(
+    return _BorderedClipOval(
+      borderColor: outerBorderColor,
+      borderWidth: outerBorderWidth,
       child: SizedBox(
         width: imageSize,
         height: imageSize,

@@ -30,6 +30,8 @@ class MyHomePage extends StatelessWidget {
             const Text('Combined Images:'),
             const SizedBox(height: 20),
             OvalImageCombiner(
+              outerBorderColor: Colors.grey.shade100,
+              outerBorderWidth: 2,
               imageUrls: [
                 'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
               ],
@@ -37,6 +39,8 @@ class MyHomePage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             OvalImageCombiner(
+              outerBorderColor: Colors.grey.shade100,
+              outerBorderWidth: 2,
               imageUrls: [
                 'https://raw.githubusercontent.com/tommykw/oval_image_combiner/0545c8914db2f2d596b71491ea5d66c2c1217c4b/asset/search_black.svg',
                 'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',

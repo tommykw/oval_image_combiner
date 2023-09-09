@@ -1,5 +1,8 @@
 # CHANGELOG.md
 
+## 0.0.6 - 2023-09-09
+- Add optionally displaying a border
+
 ## 0.0.5 - 2023-09-06
 - Refactor modules
 
@@ -10,7 +13,7 @@
 - Refactor: Split helper functions into separate files
 
 ## 0.0.2 - 2023-08-26
-- Support for borders (vertical and horizontal dividers) in `OvalImageCombiner`:
+- Support for dividers (vertical and horizontal dividers) in `OvalImageCombiner`:
 
 ## 0.0.1 - 2023-08-26
 
