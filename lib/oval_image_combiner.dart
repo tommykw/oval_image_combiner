@@ -23,6 +23,12 @@ class OvalImageCombiner extends StatelessWidget {
   /// The width of the border.
   final double? borderWidth;
 
+  /// The color of the divider.
+  final Color? dividerColor;
+
+  /// The thickness of the divider.
+  final double? dividerThickness;
+
   /// Constructs a new 'OvalImageCombiner' instance.
   const OvalImageCombiner({
     Key? key,
@@ -30,11 +36,13 @@ class OvalImageCombiner extends StatelessWidget {
     required this.imageSize,
     this.borderColor,
     this.borderWidth,
+    this.dividerColor,
+    this.dividerThickness,
   }) : super(key: key);
 
   double get _imageHalfSize => imageSize / 2;
-  Color get _dividerColor => Colors.white;
-  double get _dividerThickness => 2;
+  Color get _dividerColor => dividerColor ?? Colors.white;
+  double get _dividerThickness => dividerThickness ?? 2;
 
   @override
   Widget build(BuildContext context) {

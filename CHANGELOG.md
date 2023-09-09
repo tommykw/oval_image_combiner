@@ -3,6 +3,7 @@
 ## 0.0.7 - 2023-09-10
 - Rename outerBorderColor to borderColor
 - Rename outerBorderWidth to borderWidth
+- Support for divider color and thickness
 
 ## 0.0.6 - 2023-09-09
 - Add optionally displaying a border

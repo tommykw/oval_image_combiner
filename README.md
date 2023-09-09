@@ -34,8 +34,10 @@ Use the `OvalImageCombiner` widget:
 
 ```dart
 OvalImageCombiner(
-  outerBorderColor: Colors.grey,
-  outerBorderWidth: 2,
+  borderColor: Colors.grey,
+  borderWidth: 2,
+  dividerColor: Colors.grey,
+  dividerThickness: 2,
   imageUrls: [
     'https://example.com/image1.png',
     'https://example.com/image2.png',

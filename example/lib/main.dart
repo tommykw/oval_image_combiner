@@ -58,6 +58,8 @@ class MyHomePage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             OvalImageCombiner(
+              dividerColor: Colors.grey.shade300,
+              dividerThickness: 2,
               imageUrls: [
                 'https://github.com/tommykw/oval_image_combiner/blob/main/example/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png?raw=true',
                 'https://raw.githubusercontent.com/tommykw/oval_image_combiner/0545c8914db2f2d596b71491ea5d66c2c1217c4b/asset/search_black.svg',
