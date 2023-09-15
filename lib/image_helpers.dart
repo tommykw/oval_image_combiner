@@ -16,8 +16,8 @@ Widget _buildImage({
             height: height,
             fit: BoxFit.cover,
           )
-        : Image.network(
-            imageUrl,
+        : CachedNetworkImage(
+            imageUrl: imageUrl,
             width: width,
             height: height,
             fit: BoxFit.cover,

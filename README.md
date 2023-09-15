@@ -9,7 +9,7 @@ A Flutter widget that allows you to combine up to four images into an oval shape
 - Combine 1 to 4 images into an oval shape.
 - Supports both raster and SVG images.
 - Customizable image size.
-- Customizable borders.
+- Customizable borders and dividers.
 
 ## Getting started
 
