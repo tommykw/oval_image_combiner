@@ -1,6 +1,6 @@
 name: oval_image_combiner
 description: A Flutter widget to combine up to four images into an oval shape. 
-version: 0.0.7
+version: 0.0.8
 homepage: https://github.com/tommykw/oval_image_combiner
 
 environment:
@@ -8,6 +8,7 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+  cached_network_image: ^3.2.3
   flutter:
     sdk: flutter
   flutter_svg: ^2.0.7

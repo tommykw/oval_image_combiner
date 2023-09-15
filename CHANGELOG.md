@@ -1,5 +1,8 @@
 # CHANGELOG.md
 
+## 0.0.8 - 2023-09-15
+- Improve image display performance
+
 ## 0.0.7 - 2023-09-10
 - Rename outerBorderColor to borderColor
 - Rename outerBorderWidth to borderWidth
